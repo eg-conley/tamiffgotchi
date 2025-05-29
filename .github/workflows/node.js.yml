@@ -54,12 +54,6 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
 
-    - name: Build Application
-      run: npx ng build --configuration=production
-
-    - name: Start Application
-      run: npx ng serve --host
-
     - name: Run Playwright Tests
       run: npx ng e2e
 
