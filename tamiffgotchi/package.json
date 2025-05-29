@@ -33,7 +33,7 @@
     "@playwright/test": "1.52.0",
     "@types/express": "^5.0.1",
     "@types/jasmine": "~5.1.0",
-    "@types/node": "^20.17.52",
+    "@types/node": "^22.15.24",
     "jasmine-core": "~5.7.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
@@ -41,6 +41,6 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "playwright-ng-schematics": "^1.2.2",
-    "typescript": "~5.8.2"
+    "typescript": "^5.8.3"
   }
 }
