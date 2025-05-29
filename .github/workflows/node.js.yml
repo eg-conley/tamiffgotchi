@@ -25,11 +25,9 @@ jobs:
         cache: 'npm'
 
     - name: Install Dependencies
-      working-directory: ./tamiffgotchi
       run: npm ci
 
     - name: Run Unit Tests
-      working-directory: ./tamiffgotchi
       run: npm test -- --coverage
 
     - name: Upload Coverage Report
@@ -51,15 +49,12 @@ jobs:
         cache: 'npm'
 
     - name: Install Dependencies
-      working-directory: ./tamiffgotchi
       run: npm ci
 
     - name: Install Playwright Browsers
-      working-directory: ./tamiffgotchi
       run: npx playwright install
 
     - name: Run Playwright Tests
-      working-directory: ./tamiffgotchi
       run: npx playwright test
 
     - name: Upload Playwright Test Report
