@@ -80,7 +80,7 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/assets/styles/global.css"
             ]
           }
         },
