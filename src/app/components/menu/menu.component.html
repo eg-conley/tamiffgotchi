@@ -1,0 +1,33 @@
+<div class="menu-container">
+    <h1>welcome to tamiffgotchi</h1>
+    <div class="nav-options">
+        <div class="game-options">
+            <button 
+                (click)="onNewGameClick()"
+                [class.pressed]="isNewGame">
+                new game</button>
+            <button 
+                (click)="onLoadGameClick()"
+                [class.pressed]="isLoadGame">
+                load game</button>
+        </div>
+        <p>choose a home</p>
+        <div class="pet-options">
+            <button 
+                (click)="onPenOptionClick('pen1')"
+                [class.pressed]="penStates.pen1"
+                [disabled]="!isNewGame">
+                pen 1</button>
+            <button 
+                (click)="onPenOptionClick('pen2')"
+                [class.pressed]="penStates.pen2"
+                [disabled]="!isNewGame">
+                pen 2</button>
+            <button 
+                (click)="onPenOptionClick('pen3')"
+                [class.pressed]="penStates.pen3"
+                [disabled]="!isNewGame">
+                pen 3</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,77 @@
+.menu-container {
+    width:100vw;
+    height: 100vh;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.game-options {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    gap:20px;
+}
+
+.game-options button {
+    font-family: 'Courier New', sans-serif;
+    font-size: 20px;
+    background-color: #f36c21;
+    color: white; 
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.game-options button:hover {
+    background-color: #071aaa;
+}
+
+.game-options button:disabled {
+    background-color: gray;
+    cursor: not-allowed;
+}   
+
+.game-options button.pressed {
+    background-color: #071aaa;
+}
+
+.pet-options {
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding:20px;
+    gap:50px;
+}
+
+.pet-options button {
+    font-family: 'Courier New', sans-serif;
+    font-size: 18px;
+    background-color: #f36c21;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.pet-options button:hover {
+    background-color: #071aaa;
+}
+
+.pet-options button:disabled {
+    background-color: gray;
+    cursor: not-allowed;
+}
+
+.pet-options button.pressed {
+    background-color: #071aaa;
+}
+
