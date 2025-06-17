@@ -1,37 +1,48 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core'
+import { Router } from '@angular/router'
+import { RouterOutlet } from '@angular/router'
 
-import { CommonModule } from '@angular/common';
-import { MenuComponent } from './components/menu/menu.component';
-import { PenComponent } from './components/pen/pen.component';
+import { CommonModule } from '@angular/common'
+import { MenuComponent } from './components/menu/menu.component'
+import { PenComponent } from './components/pen/pen.component'
 
 @Component({
   selector: 'app-component',
-  imports: [
-    CommonModule,
-    MenuComponent,
-    PenComponent,
-  ],
+  imports: [RouterOutlet, CommonModule, MenuComponent, PenComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
 export class AppComponent {
-  protected title = 'tamiffgotchi';
+  protected title = 'tamiffgotchi'
 
-  menu = MenuComponent;
-  pen = PenComponent;
+  menu = MenuComponent
+  pen = PenComponent
+
+  constructor(private router: Router) {}
 
   // default variables
-  selectedPen: string = '';
+  isSelected: boolean = false
 
   onPenSelected(pen: string) {
-    this.selectedPen = pen;
-    console.log('Selected Pen:', pen);
+    console.log('Selected Pen:', pen)
+    this.isSelected = true
+    switch (pen) {
+      case 'penOne':
+        this.router.navigate(['/pen-one'])
+        break
+      case 'penTwo':
+        this.router.navigate(['/pen-two'])
+        break
+      case 'penThree':
+        this.router.navigate(['/pen-three'])
+        break
+      default:
+        console.error('Invalid pen selection')
+    }
   }
 
-  onExitPenClick(hasExited : true) {
-    // logic to exit pen
-    this.selectedPen = '';
+  onExitClick() {
+    this.isSelected = false
+    this.router.navigate(['/'])
   }
-
 }

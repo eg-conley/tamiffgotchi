@@ -55,6 +55,8 @@
     font-size: 18px;
     background-color: #f36c21;
     color: white;
+    width: 300px;
+    height: 300px;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;

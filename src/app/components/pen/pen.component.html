@@ -1,20 +1,31 @@
 <body>
-    <div class="pen-container">
-        <div class="pet-info">
-            <h1>pet name</h1>
-            <div class="pet">₍ᐢ. x .ᐢ₎</div>
-        </div>
-
-      <div class="status">
-        <p>hunger: <span>{{ hunger }}</span></p>
-        <p>happiness: <span>{{ happiness }}</span></p>
-        <p>cleanliness: <span>{{ cleanliness }}</span></p>
-      </div>
-
-      <div class="buttons">
-        <button (click)="feedPet()" [disabled]="hunger === 0">feed</button>
-        <button (click)="playWithPet()" [disabled]="happiness === 10">play</button>
-        <button (click)="cleanPet()" [disabled]="cleanliness === 10">clean</button>
-      </div>
+  <div class="pen-container">
+    <div class="pet-info">
+      <h1>pet name</h1>
+      <div class="pet">₍ᐢ. x .ᐢ₎</div>
     </div>
+
+    <div class="status">
+      <p>
+        hunger: <span>{{ hunger }}</span>
+      </p>
+      <p>
+        happiness: <span>{{ happiness }}</span>
+      </p>
+      <p>
+        cleanliness: <span>{{ cleanliness }}</span>
+      </p>
+    </div>
+
+    <div class="buttons">
+      <button (click)="onExitClick()">exit</button>
+      <button (click)="feedPet()" [disabled]="hunger === 0">feed</button>
+      <button (click)="playWithPet()" [disabled]="happiness === 10">
+        play
+      </button>
+      <button (click)="cleanPet()" [disabled]="cleanliness === 10">
+        clean
+      </button>
+    </div>
+  </div>
 </body>

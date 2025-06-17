@@ -1,58 +1,52 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core'
+import { RouterOutlet, RouterLink } from '@angular/router'
 
 @Component({
+  imports: [RouterOutlet, RouterLink],
   selector: 'menu-component',
   templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.css']
+  styleUrls: ['./menu.component.css'],
 })
 export class MenuComponent {
-  @Output() selectedPen = new EventEmitter<string>();
+  @Output() penChoice = new EventEmitter<string>()
 
   // default properties
-  isNewGame: boolean = false;
-  isLoadGame: boolean = false;
-
-  // pen button states
-  penStates: { [key in 'pen1' | 'pen2' | 'pen3']: boolean} =
-  {
-    pen1:false,
-    pen2:false,
-    pen3:false,
-  };
+  newGameToggle: boolean = false
+  loadGameToggle: boolean = false
+  penStateToggle: { [key in 'penOne' | 'penTwo' | 'penThree']: boolean } = {
+    penOne: false,
+    penTwo: false,
+    penThree: false,
+  }
 
   onNewGameClick() {
-    this.isNewGame = !this.isNewGame;
-    console.log('New Game Clicked');
-    // logic to start a new game can be added here
-    // need to launch new pet creator
+    this.newGameToggle = !this.newGameToggle
+    // TO DO: logic to start a new game can be added here
   }
 
   onLoadGameClick() {
-    this.isLoadGame = !this.isLoadGame;
-    console.log('Load Game Clicked');
-    // logic to load the game can be added here
+    this.loadGameToggle = !this.loadGameToggle
+    // TO DO: logic to load the game can be added here
   }
 
-  onPenOptionClick(pen: 'pen1' | 'pen2' | 'pen3') {
-    // logic to select specific pen
-    if (this.isLoadGame) {
-      // logic to load the game with the selected pen
-      console.log(`Loading game with ${pen}`);
-      this.selectedPen.emit(pen);
-    }
-    
-    if (this.isNewGame) {
-      this.penStates[pen] = !this.penStates[pen]; // toggle logic
-      
-      if (this.penStates[pen])
-        this.selectedPen.emit(pen);
-      else
-        this.selectedPen.emit('');
-    }
+  onPenOptionClick(penChoice: 'penOne' | 'penTwo' | 'penThree') {
+    // creates a new game
+    if (this.newGameToggle && !this.loadGameToggle) {
+      this.penStateToggle[penChoice] = true // set pen state as active
 
+      // if active, emit the pen choice
+      if (this.penStateToggle[penChoice]) {
+        console.log(`Starting new game with ${penChoice}`)
+        this.penChoice.emit(penChoice)
+      } else {
+        this.penChoice.emit('')
+      }
+    } else {
+      // loads already saved game
+      if (this.loadGameToggle && !this.newGameToggle) {
+        console.log(`Loading game with ${penChoice}`)
+        this.penChoice.emit(penChoice)
+      }
+    }
   }
-
-  // onExitPenClick() {
-  //   this.selectedPen.emit('');
-  // }
 }
