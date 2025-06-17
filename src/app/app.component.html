@@ -1,11 +1,1 @@
-<div class="main-menu">
-  <div *ngIf="!isSelected">
-    <menu-component (penChoice)="onPenSelected($event)"></menu-component>
-  </div>
-
-  <div *ngIf="isSelected">
-    <pen-component (hasExited)="onExitClick()"></pen-component>
-  </div>
-</div>
-
-<router-outlet></router-outlet>
+<router-outlet> </router-outlet>

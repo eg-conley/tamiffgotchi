@@ -1,79 +1,100 @@
 .menu-container {
-    width:100vw;
-    height: 100vh;
-    background-color: #ffffff;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+/********** BUTTON *********/
+button {
+  font-family: "Courier New", sans-serif;
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.15s;
+  padding: 10px 20px;
+}
+
+button:hover {
+  background-color: var(--hover-pressed-color);
+}
+
+button:disabled {
+  background-color: var(--disabled-color);
+  cursor: not-allowed;
+}
+
+button.pressed {
+  background-color: var(--hover-pressed-color);
+}
+/********** END BUTTON *********/
+
+.title {
+  font-size: 57px;
+  margin: 10px 20px 20px;
+}
+
+.call-to-action {
+  font-size: 40px;
+  margin: 20px;
+}
+
+.settings {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  padding: 20px 20px 10px;
+}
+
+.settings button {
+  font-size: 20px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  clip-path: polygon(
+    50% 15%,
+    /* Top point */ 62% 32%,
+    /* Top-right inner point */ 85% 40%,
+    /* Right outer point */ 68% 55%,
+    /* Bottom-right inner point */ 72% 80%,
+    /* Bottom-right outer point */ 50% 72%,
+    /* Bottom point */ 28% 80%,
+    /* Bottom-left outer point */ 32% 55%,
+    /* Bottom-left inner point */ 15% 40%,
+    /* Left outer point */ 38% 32% /* Top-left inner point */
+  );
 }
 
 .game-options {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    gap:20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 20px 50px;
+  gap: 20px;
 }
 
 .game-options button {
-    font-family: 'Courier New', sans-serif;
-    font-size: 20px;
-    background-color: #f36c21;
-    color: white; 
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.game-options button:hover {
-    background-color: #071aaa;
-}
-
-.game-options button:disabled {
-    background-color: gray;
-    cursor: not-allowed;
-}   
-
-.game-options button.pressed {
-    background-color: #071aaa;
+  font-size: 20px;
+  width: 150px;
+  height: 50px;
 }
 
 .pet-options {
-    display:flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding:20px;
-    gap:50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px 20px;
+  gap: 75px;
 }
 
 .pet-options button {
-    font-family: 'Courier New', sans-serif;
-    font-size: 18px;
-    background-color: #f36c21;
-    color: white;
-    width: 300px;
-    height: 300px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+  font-size: 20px;
+  width: 300px;
+  height: 300px;
 }
-
-.pet-options button:hover {
-    background-color: #071aaa;
-}
-
-.pet-options button:disabled {
-    background-color: gray;
-    cursor: not-allowed;
-}
-
-.pet-options button.pressed {
-    background-color: #071aaa;
-}
-

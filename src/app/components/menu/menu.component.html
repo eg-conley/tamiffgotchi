@@ -1,5 +1,8 @@
 <div class="menu-container">
-  <h1>tamiffgotchi</h1>
+  <div class="settings">
+    <button class="theme-selector" (click)="toggleTheme()"></button>
+  </div>
+  <h1 class="title">tamiffgotchi</h1>
   <div class="nav-options">
     <div class="game-options">
       <button
@@ -17,24 +20,21 @@
         load game
       </button>
     </div>
-    <p>choose a home</p>
+    <p class="call-to-action">choose a pet</p>
     <div class="pet-options">
       <button
-        routerLink="/pen-one"
         (click)="onPenOptionClick('penOne')"
         [disabled]="newGameToggle == false && loadGameToggle == false"
       >
         pen 1
       </button>
       <button
-        routerLink="/pen-two"
         (click)="onPenOptionClick('penTwo')"
         [disabled]="newGameToggle == false && loadGameToggle == false"
       >
         pen 2
       </button>
       <button
-        routerLink="/pen-three"
         (click)="onPenOptionClick('penThree')"
         [disabled]="newGameToggle == false && loadGameToggle == false"
       >
@@ -43,5 +43,3 @@
     </div>
   </div>
 </div>
-
-<router-outlet></router-outlet>

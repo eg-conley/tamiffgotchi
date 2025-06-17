@@ -17,8 +17,8 @@
       </p>
     </div>
 
-    <div class="buttons">
-      <button (click)="onExitClick()">exit</button>
+    <div class="pet-interactions">
+      <button (click)="exitPen()">exit</button>
       <button (click)="feedPet()" [disabled]="hunger === 0">feed</button>
       <button (click)="playWithPet()" [disabled]="happiness === 10">
         play

@@ -1,50 +1,55 @@
 .pen-container {
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 20px;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  h1 {
-    color: #333;
-  }
-  
-  .pet {
-    font-size: 100px;
-    margin: 20px 0;
-  }
-  
-  .status {
-    margin: 20px 0;
-    font-size: 18px;
-    color: #555;
-  }
-  
-  .buttons {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-  }
-  
-  button {
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    background-color: #4caf50;
-    color: white;
-    transition: background-color 0.3s;
-  }
-  
-  button:hover {
-    background-color: #45a049;
-  }
-  
-  button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-  }
-  
+  width: 100vw;
+  height: 100vh;
+  background: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/********** BUTTON *********/
+button {
+  font-family: "Courier New", sans-serif;
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.15s;
+  padding: 10px 20px;
+}
+
+button:hover {
+  background-color: var(--hover-pressed-color);
+}
+
+button:disabled {
+  background-color: var(--disabled-color);
+  cursor: not-allowed;
+}
+
+button.pressed {
+  background-color: var(--hover-pressed-color);
+}
+/********** END BUTTON *********/
+
+h1 {
+  color: var(--text-color);
+}
+
+.pet {
+  font-size: 100px;
+  margin: 20px 0;
+}
+
+.status {
+  margin: 20px 0;
+  font-size: 18px;
+  color: var(--text-color);
+}
+
+.pet-interactions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
