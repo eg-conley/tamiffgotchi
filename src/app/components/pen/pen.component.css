@@ -1,10 +1,11 @@
 .pen-container {
   width: 100vw;
   height: 100vh;
-  background: var(--primary-color);
+  background-color: var(--primary-color);
   display: flex;
   flex-direction: column;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  align-items: center;
+  justify-content: center;
 }
 
 /********** BUTTON *********/
@@ -33,23 +34,43 @@ button.pressed {
 }
 /********** END BUTTON *********/
 
-h1 {
-  color: var(--text-color);
+.pet-info {
+  width: 750px;
+  height: 400px;
+  border-radius: 10px;
+  background-color: var(--accent-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.pet-name {
+  font-size: 50px;
+  margin: 10px 20px 20px;
 }
 
 .pet {
-  font-size: 100px;
-  margin: 20px 0;
+  font-size: 50px;
 }
 
 .status {
-  margin: 20px 0;
-  font-size: 18px;
-  color: var(--text-color);
+  font-size: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
 }
 
 .pet-interactions {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 50px;
+}
+
+.pet-interactions button {
+  font-size: 20px;
+  width: 150px;
+  height: 50px;
 }
