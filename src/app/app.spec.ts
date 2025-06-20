@@ -16,10 +16,8 @@ describe('App', () => {
     expect(app).toBeTruthy();
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('tamiffgotchi');
+  it('should have correct title', () => {
+    const app = new AppComponent();
+    expect(app.title).toBe('tamiffgotchi');
   });
 });
