@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import { RouterOutlet } from '@angular/router';
 
 import { CommonModule } from '@angular/common';
@@ -11,5 +10,5 @@ import { CommonModule } from '@angular/common';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  protected title = 'tamiffgotchi';
+  public title = 'tamiffgotchi';
 }

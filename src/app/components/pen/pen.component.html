@@ -1,31 +1,36 @@
-<body>
-  <div class="pen-container">
-    <div class="pet-info">
-      <h1 class="pet-name">pet name</h1>
+<div class="pen-container">
+  <div class="info-bar">
+    <p class="pet-age">{{ petAge }} days old</p>
+    <p class="pet-name">{{ petName }}</p>
+    <div class="date-info">
+      <p>{{ date | date : "longDate" }}</p>
+      <p>{{ date | date : "shortTime" }}</p>
+    </div>
+  </div>
+
+  <div class="status">
+    <div class="status-update">
+      <h1 class="status-text">{{ statusUpdate }}</h1>
       <p class="pet">₍ᐢ. x .ᐢ₎</p>
     </div>
 
-    <div class="status">
+    <div class="status-value">
       <p>
-        hunger: <span>{{ hunger }}</span>
+        hungr: <span>{{ hunger }}</span>
       </p>
       <p>
-        happiness: <span>{{ happiness }}</span>
+        happi: <span>{{ happiness }}</span>
       </p>
       <p>
-        cleanliness: <span>{{ cleanliness }}</span>
+        clean: <span>{{ cleanliness }}</span>
       </p>
-    </div>
-
-    <div class="pet-interactions">
-      <button (click)="exitPen()">exit</button>
-      <button (click)="feedPet()" [disabled]="hunger === 0">feed</button>
-      <button (click)="playWithPet()" [disabled]="happiness === 10">
-        play
-      </button>
-      <button (click)="cleanPet()" [disabled]="cleanliness === 10">
-        clean
-      </button>
     </div>
   </div>
-</body>
+
+  <div class="pet-interactions">
+    <button (click)="exitPen()">exit</button>
+    <button (click)="feedPet()" [disabled]="hunger === 0">feed</button>
+    <button (click)="playWithPet()" [disabled]="happiness === 10">play</button>
+    <button (click)="cleanPet()" [disabled]="cleanliness === 10">clean</button>
+  </div>
+</div>

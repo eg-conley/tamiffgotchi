@@ -1,7 +1,9 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
+import { DatePipe } from '@angular/common';
 
 @Component({
+  imports: [DatePipe],
   selector: 'pen-component',
   templateUrl: './pen.component.html',
   styleUrl: './pen.component.css',
@@ -13,14 +15,19 @@ export class PenComponent {
 
   constructor(private router: Router) {}
 
-  hunger = 5;
-  happiness = 5;
-  cleanliness = 5;
-  age = 0;
+  // deafult valuesj
+  hunger: number = 5;
+  happiness: number = 5;
+  cleanliness: number = 5;
+  petAge: number = 0;
+  petName: string = 'Miffy';
+  date: Date = new Date();
+  statusUpdate: string = 'welcome';
 
   feedPet() {
     if (this.hunger > 0) {
       this.hunger--;
+      this.statusUpdate = 'You fed your pet';
     } else {
     }
   }
@@ -28,6 +35,7 @@ export class PenComponent {
   playWithPet() {
     if (this.happiness < 10) {
       this.happiness++;
+      this.statusUpdate = 'You played with your pet';
     } else {
     }
   }
@@ -35,6 +43,7 @@ export class PenComponent {
   cleanPet() {
     if (this.cleanliness < 10) {
       this.cleanliness++;
+      this.statusUpdate = 'You cleaned your pet';
     } else {
     }
   }
