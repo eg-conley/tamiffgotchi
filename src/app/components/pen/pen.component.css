@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 /********** BUTTON *********/
@@ -16,7 +16,7 @@ button {
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  transition: background-color 0.15s;
+  transition: var(--primary-color) 0.15s;
   padding: 10px 20px;
 }
 
@@ -34,27 +34,47 @@ button.pressed {
 }
 /********** END BUTTON *********/
 
-.pet-info {
-  width: 750px;
-  height: 400px;
+.info-bar {
+  width: 1300px;
+  height: 50px;
+  font-size: 20px;
   border-radius: 10px;
   background-color: var(--accent-color);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 50px;
+  margin: 50px;
+}
+
+.pet-age {
+  text-align: left;
+}
+
+.date-info {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.status {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 20px;
 }
 
-.pet-name {
-  font-size: 50px;
-  margin: 10px 20px 20px;
+.status-text {
+  font-size: 20px;
 }
 
 .pet {
-  font-size: 50px;
+  font-size: 75px;
 }
 
-.status {
+.status-value {
   font-size: 20px;
   display: flex;
   flex-direction: row;
@@ -64,13 +84,20 @@ button.pressed {
 }
 
 .pet-interactions {
+  width: 1400px;
+  height: 50px;
+  border-radius: 10px;
+  background-color: var(--accent-color);
   display: flex;
-  justify-content: center;
-  gap: 50px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 50px;
 }
 
 .pet-interactions button {
+  background-color: var(--primary-color);
   font-size: 20px;
   width: 150px;
-  height: 50px;
+  height: 40px;
 }
