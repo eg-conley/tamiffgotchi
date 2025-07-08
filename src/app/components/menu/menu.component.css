@@ -35,7 +35,7 @@ button.pressed {
 
 .title {
   font-size: 50px;
-  margin: 10px 20px 20px;
+  margin: 20px;
 }
 
 .call-to-action {
@@ -47,13 +47,13 @@ button.pressed {
   display: flex;
   flex-direction: row;
   justify-content: right;
-  padding: 20px 20px 10px;
+  padding: 20px;
 }
 
 .settings button {
   font-size: 20px;
-  width: 100px;
-  height: 100px;
+  width: 75px;
+  height: 75px;
   border-radius: 50px;
   clip-path: polygon(
     50% 15%,
@@ -96,5 +96,5 @@ button.pressed {
 .pet-options button {
   font-size: 20px;
   width: 300px;
-  height: 300px;
+  height: 200px;
 }

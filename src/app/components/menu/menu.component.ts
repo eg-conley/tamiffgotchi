@@ -24,12 +24,9 @@ export class MenuComponent {
   };
 
   toggleTheme() {
-    console.log('theme button clicked');
     const themes = ['default', 'blue', 'orange'];
     this.count = this.count + 1;
-    console.log(this.count);
     const theme = themes[this.count % themes.length];
-    console.log(theme);
     this.themeService.setTheme(theme);
   }
 
