@@ -15,7 +15,7 @@ export class PenComponent {
 
   constructor(private router: Router) {}
 
-  // deafult valuesj
+  // default valuesj
   hunger: number = 5;
   happiness: number = 5;
   cleanliness: number = 5;

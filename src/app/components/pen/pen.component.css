@@ -48,6 +48,12 @@ button.pressed {
   margin: 50px;
 }
 
+.pet-name {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+}
+
 .pet-age {
   text-align: left;
 }
@@ -97,7 +103,15 @@ button.pressed {
 
 .pet-interactions button {
   background-color: var(--primary-color);
+  transition: background-color 0.15s;
   font-size: 20px;
   width: 150px;
   height: 40px;
+}
+.pet-interactions button:hover {
+  background-color: var(--hover-pressed-color);
+}
+
+.pet-interactions button:disabled {
+  background-color: var(--primary-color);
 }
