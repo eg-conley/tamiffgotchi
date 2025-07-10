@@ -11,22 +11,15 @@ import { GameData, DataService } from '../../services/data.service';
 })
 export class PenComponent {
   // based on pen input from menu component, import different pet information
-  @Input() gameData: GameData = {
-    petName: 'Default',
-    petAge: 0,
-    hunger: 5,
-    happiness: 0,
-    cleanliness: 0,
-  };
-  // @Output() hasExited = new EventEmitter<boolean>();
+  @Input() inputPetName: string = '';
 
   constructor(private router: Router, private dataService: DataService) {}
 
-  petName: string = 'Miffy';
+  petName: string = this.inputPetName;
   petAge: number = 0;
-  hunger = 5;
-  happiness = 5;
-  cleanliness = 5;
+  hunger: number = 5;
+  happiness: number = 0;
+  cleanliness: number = 0;
   date: Date = new Date();
   statusUpdate: string = 'welcome';
 
@@ -37,13 +30,6 @@ export class PenComponent {
       this.hunger = savedData.hunger;
       this.happiness = savedData.happiness;
       this.cleanliness = savedData.cleanliness;
-    } else {
-      // default values
-      this.petName = 'Miffy';
-      this.petAge = 0;
-      this.hunger = 5;
-      this.happiness = 5;
-      this.cleanliness = 5;
     }
   }
 
@@ -80,7 +66,7 @@ export class PenComponent {
       cleanliness: this.cleanliness,
     };
     this.dataService.saveGameData(this.petName, gameData);
-    console.log('Game saved');
+    this.statusUpdate = 'Game saved';
   }
 
   exitPen() {
