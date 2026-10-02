@@ -29,6 +29,7 @@
 
   <div class="pet-interactions">
     <button (click)="exitPen()">exit</button>
+    <button (click)="saveGame()">save</button>
     <button (click)="feedPet()" [disabled]="hunger === 0">feed</button>
     <button (click)="playWithPet()" [disabled]="happiness === 10">play</button>
     <button (click)="cleanPet()" [disabled]="cleanliness === 10">clean</button>
